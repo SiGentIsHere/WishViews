@@ -81,22 +81,37 @@ document.addEventListener('DOMContentLoaded', function() {
             year: 'numeric'
         }).toUpperCase();
 
+        // Photo section
+        const photoHTML = wish.image_url 
+            ? `<img src="${wish.image_url}" alt="Photo from ${escapeHtml(wish.your_name)}">`
+            : '<span class="wish-photo-placeholder">📷</span>';
+
         div.innerHTML = `
-            <div class="wish-card-inner">
-                ${wish.image_url ? `
-                    <div class="wish-image-container">
-                        <img src="${wish.image_url}" alt="${escapeHtml(wish.your_name)}" class="wish-image">
+            <div class="wish-card-content">
+                <!-- TO: Recipient -->
+                <div class="wish-to">
+                    TO: <span class="wish-to-name">${escapeHtml(wish.friend_name) || 'Friend'}</span>
+                </div>
+
+                <!-- Photo Left, Message Right -->
+                <div class="wish-body">
+                    <!-- Photo -->
+                    <div class="wish-photo">
+                        ${photoHTML}
                     </div>
-                ` : ''}
-                <div class="wish-content">
-                    <div class="wish-header">
-                        <img src="image/header.png" alt="Happy Birthday" class="wish-header-img">
-                    </div>
-                    <h3 class="wish-to">TO: <span class="highlight">CHEATA</span> 🎂</h3>
-                    <p class="wish-message">${escapeHtml(wish.birthday_wish)}</p>
-                    <div class="wish-footer">
-                        <span class="wish-from">FROM: <span class="highlight">${escapeHtml(wish.your_name)}</span></span>
-                        <span class="wish-date">${dateStr}</span>
+
+                    <!-- Message and Signature -->
+                    <div class="wish-details">
+                        <!-- Birthday Message -->
+                        <p class="wish-message">${escapeHtml(wish.birthday_wish)}</p>
+
+                        <!-- Signature -->
+                        <div class="wish-signature">
+                            <div class="wish-from">
+                                FROM: <span class="wish-from-name">${escapeHtml(wish.your_name)}</span>
+                            </div>
+                            <div class="wish-date">${dateStr}</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,8 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return div.innerHTML;
     }
 
-    // Auto-refresh every 30 seconds
-    setInterval(loadWishes, 30000);
+    // Auto-refresh every 60 seconds
+    setInterval(loadWishes, 600000);
 
     console.log('✅ Ready to display birthday wishes for Cheata!');
 });
