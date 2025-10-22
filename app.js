@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="wish-card-content ${!hasPhoto ? 'no-photo' : ''}">
                 <!-- TO: Recipient (Top Left) -->
                 <div class="wish-to">
+                <div class="wish-stars">✦ ✦ ✦ ✦</div>
                     TO: <span class="wish-to-name">${escapeHtml(wish.friend_name) || 'Friend'}</span>
                 </div>
 
