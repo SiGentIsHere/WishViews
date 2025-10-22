@@ -61,10 +61,8 @@ body {
 
 /* Main Content */
 .main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Form Card */
@@ -559,26 +557,26 @@ body {
    VIEW PAGE SPECIFIC STYLES
    ======================================== */
 
-/* Wishes Counter (Smaller, Compact) */
+/* Wishes Counter (Wider) */
 .wishes-counter {
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--primary);
-    margin-bottom: 25px;
-    padding: 10px 20px;
+    margin: 0 auto 30px auto;
+    padding: 15px 40px;
     background: var(--card-bg);
-    border-radius: 25px;
-    display: inline-block;
-    box-shadow: 0 2px 8px var(--shadow);
-    margin-left: 50%;
-    transform: translateX(-50%);
+    border-radius: 30px;
+    display: block;
+    max-width: 400px;
+    box-shadow: 0 3px 12px var(--shadow);
 }
 
 .wishes-counter span {
     color: var(--secondary);
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
+    margin-left: 8px;
 }
 
 /* Loading State */
@@ -706,18 +704,18 @@ body {
 .wish-body {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 /* Wish Photo (Left side on desktop) */
 .wish-photo {
     flex-shrink: 0;
     width: 100%;
-    max-width: 200px;
-    height: 200px;
+    max-width: 100%;
+    height: 250px;
     border-radius: 10px;
     overflow: hidden;
-    border: 2px solid var(--primary);
+    border: 3px solid var(--primary);
     background: #f9f9f9;
     display: flex;
     align-items: center;
@@ -750,9 +748,10 @@ body {
     line-height: 1.8;
     font-style: italic;
     word-wrap: break-word;
-    text-indent: 20px;
+    word-break: break-word;
     text-align: left;
     margin-bottom: 15px;
+    flex: 1;
 }
 
 /* Signature (Bottom Right) */
@@ -788,51 +787,73 @@ body {
 /* Responsive for View Page */
 @media (min-width: 480px) {
     .wishes-counter {
-        font-size: 18px;
+        font-size: 20px;
+        padding: 18px 50px;
     }
 
     .wishes-counter span {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .wish-photo {
-        max-width: 220px;
-        height: 220px;
+        height: 280px;
     }
 }
 
 @media (min-width: 768px) {
     .wishes-counter {
-        font-size: 20px;
+        font-size: 22px;
+        max-width: 500px;
     }
 
     .wishes-counter span {
-        font-size: 22px;
+        font-size: 26px;
     }
 
     /* Photo Left, Message Right on larger screens */
     .wish-body {
         flex-direction: row;
-        gap: 25px;
+        gap: 30px;
+        align-items: flex-start;
     }
 
-    .wish-photo {
-        width: 250px;
-        height: 250px;
-    }
-
-    .wish-card {
-        padding: 25px;
-    }
-}
-
-@media (min-width: 1024px) {
     .wish-photo {
         width: 280px;
         height: 280px;
+        max-width: 280px;
     }
 
     .wish-card {
         padding: 30px;
+    }
+
+    .wish-message {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wishes-counter {
+        max-width: 600px;
+        font-size: 24px;
+    }
+
+    .wishes-counter span {
+        font-size: 28px;
+    }
+
+    .wish-photo {
+        width: 320px;
+        height: 320px;
+        max-width: 320px;
+    }
+
+    .wish-card {
+        padding: 35px;
+    }
+
+    .wish-body {
+        gap: 35px;
     }
 }
