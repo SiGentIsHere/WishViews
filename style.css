@@ -361,7 +361,7 @@ body {
 .card-to .highlight {
     color: var(--primary);
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 18px;
     text-decoration: underline;
 }
@@ -682,13 +682,12 @@ body {
     gap: 15px;
 }
 
-/* "TO: RECIPIENT" Header */
+/* "TO: RECIPIENT" Header (Top Right) */
 .wish-to {
-    text-align: left;
+    text-align: right;
     font-size: 16px;
     font-weight: 600;
     color: var(--text-dark);
-    padding-left: 5px;
     margin-bottom: 10px;
 }
 
@@ -763,7 +762,13 @@ body {
     font-size: 14px;
     color: var(--text-dark);
     padding-top: 10px;
-    border-top: 2px solid rgba(191, 90, 90, 0.2);
+}
+
+.wish-stars {
+    font-size: 14px;
+    color: var(--primary);
+    letter-spacing: 4px;
+    margin-bottom: 5px;
 }
 
 .wish-from {
@@ -782,6 +787,29 @@ body {
     font-weight: 500;
     color: var(--text-light);
     font-size: 13px;
+}
+
+/* Card with no photo - center everything */
+.wish-card-content.no-photo .wish-body {
+    justify-content: center;
+}
+
+.wish-card-content.no-photo .wish-details {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wish-card-content.no-photo .wish-to {
+    text-align: center;
+}
+
+.wish-card-content.no-photo .wish-message {
+    text-align: center;
+}
+
+.wish-card-content.no-photo .wish-signature {
+    text-align: center;
 }
 
 /* Responsive for View Page */

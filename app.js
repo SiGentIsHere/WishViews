@@ -81,32 +81,33 @@ document.addEventListener('DOMContentLoaded', function() {
             year: 'numeric'
         }).toUpperCase();
 
-        // Photo section
-        const photoHTML = wish.image_url 
-            ? `<img src="${wish.image_url}" alt="Photo from ${escapeHtml(wish.your_name)}">`
-            : '<span class="wish-photo-placeholder">📷</span>';
+        // Check if photo exists
+        const hasPhoto = !!wish.image_url;
 
         div.innerHTML = `
-            <div class="wish-card-content">
-                <!-- TO: Recipient -->
-                <div class="wish-to">
-                    TO: <span class="wish-to-name">${escapeHtml(wish.friend_name) || 'Friend'}</span>
-                </div>
-
-                <!-- Photo Left, Message Right -->
+            <div class="wish-card-content ${!hasPhoto ? 'no-photo' : ''}">
+                <!-- Photo Left (if exists), Message Right -->
                 <div class="wish-body">
-                    <!-- Photo -->
+                    <!-- Photo (only if exists) -->
+                    ${hasPhoto ? `
                     <div class="wish-photo">
-                        ${photoHTML}
+                        <img src="${wish.image_url}" alt="Photo from ${escapeHtml(wish.your_name)}">
                     </div>
+                    ` : ''}
 
                     <!-- Message and Signature -->
                     <div class="wish-details">
+                        <!-- TO: Recipient (top right) -->
+                        <div class="wish-to">
+                            TO: <span class="wish-to-name">${escapeHtml(wish.friend_name) || 'Friend'}</span>
+                        </div>
+
                         <!-- Birthday Message -->
                         <p class="wish-message">${escapeHtml(wish.birthday_wish)}</p>
 
                         <!-- Signature -->
                         <div class="wish-signature">
+                            <div class="wish-stars">✦ ✦ ✦ ✦</div>
                             <div class="wish-from">
                                 FROM: <span class="wish-from-name">${escapeHtml(wish.your_name)}</span>
                             </div>
