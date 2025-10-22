@@ -107,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         <!-- Signature (Bottom Right) -->
                         <div class="wish-signature">
-                            <div class="wish-stars">✦ ✦ ✦ ✦</div>
                             <div class="wish-from">
                                 FROM: <span class="wish-from-name">${escapeHtml(wish.your_name)}</span>
                             </div>
                             <div class="wish-date">${dateStr}</div>
+                            <div class="wish-stars">✦ ✦ ✦ ✦</div>
                         </div>
                     </div>
                 </div>

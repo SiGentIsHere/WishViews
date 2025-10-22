@@ -765,13 +765,6 @@ body {
     padding-top: 10px;
 }
 
-.wish-stars {
-    font-size: 14px;
-    color: var(--primary);
-    letter-spacing: 4px;
-    margin-bottom: 5px;
-}
-
 .wish-from {
     font-weight: 600;
     font-style: italic;
@@ -788,6 +781,13 @@ body {
     font-weight: 500;
     color: var(--text-light);
     font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.wish-stars {
+    font-size: 14px;
+    color: var(--primary);
+    letter-spacing: 4px;
 }
 
 /* Card with no photo - center everything */
