@@ -86,6 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         div.innerHTML = `
             <div class="wish-card-content ${!hasPhoto ? 'no-photo' : ''}">
+                <!-- TO: Recipient (Top Left) -->
+                <div class="wish-to">
+                    TO: <span class="wish-to-name">${escapeHtml(wish.friend_name) || 'Friend'}</span>
+                </div>
+
                 <!-- Photo Left (if exists), Message Right -->
                 <div class="wish-body">
                     <!-- Photo (only if exists) -->
@@ -97,15 +102,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     <!-- Message and Signature -->
                     <div class="wish-details">
-                        <!-- TO: Recipient (top right) -->
-                        <div class="wish-to">
-                            TO: <span class="wish-to-name">${escapeHtml(wish.friend_name) || 'Friend'}</span>
-                        </div>
-
                         <!-- Birthday Message -->
                         <p class="wish-message">${escapeHtml(wish.birthday_wish)}</p>
 
-                        <!-- Signature -->
+                        <!-- Signature (Bottom Right) -->
                         <div class="wish-signature">
                             <div class="wish-stars">✦ ✦ ✦ ✦</div>
                             <div class="wish-from">

@@ -682,19 +682,20 @@ body {
     gap: 15px;
 }
 
-/* "TO: RECIPIENT" Header (Top Right) */
+/* "TO: RECIPIENT" Header (Top Left) */
 .wish-to {
-    text-align: right;
+    text-align: left;
     font-size: 16px;
     font-weight: 600;
     color: var(--text-dark);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding-left: 5px;
 }
 
 .wish-to-name {
     color: var(--primary);
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 18px;
     text-decoration: underline;
 }
