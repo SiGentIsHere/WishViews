@@ -684,7 +684,7 @@ body {
 
 /* "TO: RECIPIENT" Header (Top Right on mobile, Top Left on desktop) */
 .wish-to {
-    text-align: right;
+    text-align: left;
     font-size: 16px;
     font-weight: 600;
     color: var(--text-dark);
@@ -749,7 +749,7 @@ body {
     font-style: italic;
     word-wrap: break-word;
     word-break: break-word;
-    text-align: center;
+    text-align: left;
     margin-bottom: 15px;
     flex: 1;
 }
@@ -790,27 +790,29 @@ body {
     letter-spacing: 4px;
 }
 
-/* Card with no photo - center everything */
+/* Card with no photo - mobile: TO left, message center, signature right */
 .wish-card-content.no-photo .wish-body {
     justify-content: center;
 }
 
 .wish-card-content.no-photo .wish-details {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 100%;
+    margin: 0;
 }
 
 .wish-card-content.no-photo .wish-to {
-    text-align: center;
+    text-align: left;
+    padding-left: 5px;
 }
 
 .wish-card-content.no-photo .wish-message {
     text-align: center;
+    padding: 0 15px;
 }
 
 .wish-card-content.no-photo .wish-signature {
-    text-align: center;
+    text-align: right;
+    padding-right: 5px;
 }
 
 /* Responsive for View Page */
